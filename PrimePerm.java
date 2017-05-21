@@ -17,37 +17,37 @@ public class PrimePerm{
 
 int[] primes = new int[3];
 
+int nextPrime = 0;
+
+int lastPrime = 0;
+
+
 for(int i =1000; i < 9999; i++){
 
+    if(isPrime(i)){
 
-      if (isPrime(i)){
+        for(int step = 2; step<5000 ;step++ ){
 
-      primes[0] = primes[1];
-      primes[1] = primes[2];
-      primes[2] = i;
+              if (isPrime(i + step) ){
+                nextPrime = i + step;
+                    if (isPrime(nextPrime  + step) ){
+                          lastPrime = nextPrime  + step;
+                          if (isPermutation(  Integer.toString(i),Integer.toString( nextPrime) )  &&  isPermutation(Integer.toString(nextPrime), Integer.toString(lastPrime)  ) ){
+                              System.out.println( i +" "+ nextPrime  +" "+ lastPrime);
+                          }
+                    }
 
-
-        if (isArithmetic(primes)){
-          //  if(isPermutation(  Integer.toString(primes[0]), Integer.toString(primes[1]) )  &&  isPermutation(Integer.toString(primes[1]), Integer.toString(primes[2]))  ){
-
-            System.out.println( Arrays.toString(primes) );
-
-        //    }
-
-        }
-
-
+            }
 
 
       }
 
+  }
 
 }
 
 
-
-
-    }
+}
 
 
 
