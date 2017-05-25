@@ -19,6 +19,7 @@ System.out.println( letterCount );
 
 }
 
+//should probably generlize more
 public static String intToWord(int n){
 
     String[] words1Dig = {"","one","two","three","four","five","six","seven","eight","nine"};
